@@ -51,3 +51,6 @@ names(data) <- gsub("gravity", "Gravity", names(data))
 #used summary function and created the mean of each group value
 finaltidydata <- data %>% group_by(subject, Activity) %>% summarise_all(funs(mean))
 
+
+write.table(finaltidydata, "finaltidydata.txt", row.name=FALSE, quote = FALSE)
+
